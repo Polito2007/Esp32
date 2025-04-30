@@ -6,7 +6,7 @@ services:
   plan: free
   envVars:
   - key: MONGO_URI
-    value: mongodb+srv://Polo:Pass.word1@cluster0.oxj3x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    value: mongodb+srv://Polo:Pass.word1@polo.okfw6fi.mongodb.net/?retryWrites=true&w=majority&appName=Polo0
   region: oregon
   buildCommand: pip install -r requirements.txt
   startCommand: python app.py
