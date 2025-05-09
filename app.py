@@ -19,7 +19,7 @@ collection = db["Datos"]
 @app.route("/api/data", methods=["POST"])
 def recibir_dato():
     data = request.get_json()
-    required_keys = ["dispositivo", "temperatura", "humedad"]
+    required_keys = ["dispositivo", "temperatura", "humedad", "luz", "movimiento"]
     if not all(k in data for k in required_keys):
         return jsonify({"error": "Faltan campos en el JSON"}), 400
 
@@ -27,11 +27,14 @@ def recibir_dato():
         "dispositivo": data["dispositivo"],
         "temperatura": data["temperatura"],
         "humedad": data["humedad"],
+        "luz": data["luz"],
+        "movimiento": data["movimiento"],
         "timestamp": datetime.utcnow() - timedelta(hours=6)
     }
 
     collection.insert_one(documento)
     return jsonify({"message": "Datos guardados correctamente"}), 200
+
 
 # Ruta para ver los últimos 50 datos
 @app.route("/api/datos", methods=["GET"])
