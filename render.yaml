@@ -6,11 +6,8 @@ services:
   plan: free
   envVars:
   - key: MONGO_URI
-    value: mongodb+srv://Polo:Pass.word1@polo.okfw6fi.mongodb.net/?retryWrites=true&w=majority&appName=Polo
+    value: "mongodb+srv://Polo:<db_password>@polo.okfw6fi.mongodb.net/?retryWrites=true&w=majority&appName=Polo"
   region: oregon
   buildCommand: pip install -r requirements.txt
   startCommand: python app.py
 version: "1"
-#mongosh "mongodb+srv://cluster0.f4ntp.mongodb.net/" --apiVersion 1 --username jorgegil
-#Dirección IP actual ( 148.215.111.122/32 ) añadida.
-#Visita Acceso a la red para modificar tu configuración.  Pass.word1
